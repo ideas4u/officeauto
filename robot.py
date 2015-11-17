@@ -12,7 +12,7 @@ class robot(object):
 	def go_to_working_dir(self,path):
 		"""change from cwd to path"""
 		os.chdir(path)	
-	def get_weekly_report_date(self,file,sheetname,number=0):
+	def get_weekly_report_data(self,file,sheetname,number=0):
 		"""open the file'sheetname and point the header to the number=0"""
 		return pd.read_excel(file,sheetname=sheetname,header=number)
 
