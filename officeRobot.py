@@ -7,6 +7,7 @@ import seaborn as sns
 import shutil
 
 class Officerobot(object):
+	"""this class imprement the office excel functions automaticaly """
 	def __init__(self,name,prefesion):
 		self.name = name
 		self.prefesion = prefesion
