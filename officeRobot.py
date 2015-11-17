@@ -37,12 +37,14 @@ class Officerobot(object):
 		return pd.read_excel(file,sheetname=sheetname,header=number)
         
 	def concat_files(self,sheetname,header=0):
-		"""concat the excel file of the cwd,"""
-		df2 = pd.DataFram()
+		"""concat the excel file of the cwd,return a dataframe"""
+		df2 = pd.DataFrame()
 		for i in range(0,len(self.get_cwd_file_list())):
 			df = pd.read_excel(self.get_cwd_file_list()[i],sheetname=sheetname,header=header)
 			df2 = pd.concat([df2,df],join='outer')
-
+		return df2
+	def to_excel_file(self,df,path_file,sheet_name="Sheet1"):
+		df.to_excel(path_file,sheet_name)
 
 UnicomGD = Officerobot("UnicomGD","DataNet")
 UnicomGD.print_name()
