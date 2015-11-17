@@ -7,11 +7,13 @@ import seaborn as sns
 import shutil
 
 class Officerobot(object):
-	def __init__(self,name):
+	def __init__(self,name,prefesion):
 		self.name = name
+		self.prefesion = prefesion
 		
 	def print_name(self):
 		print("name: %s "% (self.name))
+		print('Prefesion: %s ' % (self.prefesion))
 	
 	def make_a_new_work_dir(self,path='c://users//xiewy//workingdir'):
 		if not os.path.exists(path):
@@ -34,12 +36,13 @@ class Officerobot(object):
 		"""open the file'sheetname and point the header to the number=0"""
 		return pd.read_excel(file,sheetname=sheetname,header=number)
         
-	def concat_files(self,sheetname):
+	def concat_files(self,sheetname,header=0):
+		"""concat the excel file of the cwd,"""
 		df2 = pd.DataFram()
 		for i in range(0,len(self.get_cwd_file_list())):
-			df = pd.read_excel(self.get_cwd_file_list()[i],sheetname=sheetname,header=0)
+			df = pd.read_excel(self.get_cwd_file_list()[i],sheetname=sheetname,header=header)
 			df2 = pd.concat([df2,df],join='outer')
 
 
-michael = Officerobot("michael")
-michael.print_name()
+UnicomGD = Officerobot("UnicomGD","DataNet")
+UnicomGD.print_name()
