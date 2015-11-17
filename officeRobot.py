@@ -6,7 +6,7 @@ import seaborn as sns
 
 import shutil
 
-class robot(object):
+class Officerobot(object):
 	def __init__(self,name):
 		self.name = name
 		
@@ -41,5 +41,5 @@ class robot(object):
 			df2 = pd.concat([df2,df],join='outer')
 
 
-michael = robot("michael")
+michael = Officerobot("michael")
 michael.print_name()
