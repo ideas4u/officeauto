@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import seaborn as sns
 
+import shutil
 
 class robot(object):
 	def __init__(self,name):
@@ -22,6 +23,9 @@ class robot(object):
 		"""change from cwd to path"""
 		os.chdir(path)
 
+	def copy_file_to_working_dir(self,src,dst):
+		""" copy files to working diretory to anlyise."""
+		pass
 	def get_cwd_file_list(self):
 		"""get the cwd'file list ."""
 		return os.listdir()
@@ -30,6 +34,12 @@ class robot(object):
 		"""open the file'sheetname and point the header to the number=0"""
 		return pd.read_excel(file,sheetname=sheetname,header=number)
         
+	def concat_files(self,sheetname):
+		df2 = pd.DataFram()
+		for i in range(0,len(self.get_cwd_file_list())):
+			df = pd.read_excel(self.get_cwd_file_list()[i],sheetname=sheetname,header=0)
+			df2 = pd.concat([df2,df],join='outer')
+
 
 michael = robot("michael")
 michael.print_name()
