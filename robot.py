@@ -25,7 +25,7 @@ class robot(object):
 
 	def copy_file_to_working_dir(self,src,dst):
 		""" copy files to working diretory to anlyise."""
-		pass
+		shutil.copyfile(src,dst)
 	def get_cwd_file_list(self):
 		"""get the cwd'file list ."""
 		return os.listdir()
