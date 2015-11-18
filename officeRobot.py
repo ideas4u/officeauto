@@ -9,6 +9,7 @@ import shutil
 class Officerobot(object):
 	"""this class imprement the office excel functions automaticaly """
 	def __init__(self,name,prefesion):
+		"""constrator has the field of name and prefesion"""
 		self.name = name
 		self.prefesion = prefesion
 		
