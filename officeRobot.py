@@ -35,9 +35,9 @@ class Officerobot(object):
 		"""get the cwd'file list ."""
 		return os.listdir()
 
-	def get_excel_file_data(self,file,sheetname,number=0):
+	def get_excel_file_data(self,pathfile,sheetname,number=0):
 		"""open the file'sheetname and point the header to the number=0"""
-		return pd.read_excel(file,sheetname=sheetname,header=number)
+		return pd.read_excel(pathfile,sheetname=sheetname,header=number)
         
 	def concat_files(self,sheetname,header=0):
 		"""concat the excel file of the cwd,return a dataframe"""
