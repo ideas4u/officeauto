@@ -14,6 +14,7 @@ class Officerobot(object):
 		self.prefesion = prefesion
 		
 	def print_name(self):
+		"""print out the name and prefesion of the instance"""
 		print("name: %s "% (self.name))
 		print('Prefesion: %s ' % (self.prefesion))
 	
