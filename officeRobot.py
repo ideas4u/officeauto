@@ -29,7 +29,7 @@ class Officerobot(object):
 		os.chdir(path)
 
 	def copy_file_to_working_dir(self,src,dst):
-		""" copy files to working diretory to anlyise."""
+		""" copy files to working diretory to anlyise.does not finish"""
 		shutil.copyfile(src,dst)
 	def get_cwd_file_list(self):
 		"""get the cwd'file list ."""
