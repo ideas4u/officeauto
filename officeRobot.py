@@ -48,6 +48,11 @@ class Officerobot(object):
 		return df2
 	def to_excel_file(self,df,path_file,sheet_name="Sheet1"):
 		df.to_excel(path_file,sheet_name)
+	
+	def merge_two_file_together(left_file,right_file,how='left',left_on='项目编号',right_on='项目编号'):
+		"""merge two dateframe sheet,equls to the vlookup in excel"""
+		return pd.merge(left_file,right_file,how=how,left_on=left_on,right_on=right_on)
+		
 
 UnicomGD = Officerobot("UnicomGD","DataNet")
 UnicomGD.print_name()
