@@ -6,7 +6,7 @@ import seaborn as sns
 
 import shutil
 
-class Officerobot(object):
+class Officeauto(object):
 	"""this class imprement the office excel functions automaticaly """
 	def __init__(self,name,prefesion):
 		"""constrator has the field of name and prefesion"""
@@ -54,5 +54,5 @@ class Officerobot(object):
 		return pd.merge(left_file,right_file,how=how,left_on=left_on,right_on=right_on)
 		
 
-UnicomGD = Officerobot("UnicomGD","DataNet")
+UnicomGD = Officeauto("UnicomGD","DataNet")
 UnicomGD.print_name()
